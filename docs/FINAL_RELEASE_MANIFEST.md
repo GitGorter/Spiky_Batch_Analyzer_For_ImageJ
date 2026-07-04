@@ -4,7 +4,7 @@
 - Package directory: `release_candidates/spiky_batch_v0.1.17_final_20260702/`
 - Archive: `release_candidates/spiky_batch_v0.1.17_final_20260702.zip`
 - Archive sidecar: `release_candidates/spiky_batch_v0.1.17_final_20260702.zip.sha256`
-- Batch macro SHA-256: `05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D`
+- Batch macro SHA-256: `E591A8780EBF9E3FBC42FF80B091281119F1A6E51205A7E680C4705416CA62E2`
 - Spiky SHA-256: `79E1F96DA597A1AA91D462DB7B662459FF68B388BD93BF204FD8ABF401CDD81D`
 
 The package root contains only `README.md`, `LICENSE`, `NOTICE`, `SHA256SUMS.txt`, both required macros, `docs/`, and `examples/`. Citation, governance, release, disclaimer, and supporting documentation are organized under `docs/`. Deterministic dummy input/manifest/generator and the lightweight dummy output are under `examples/`. `SHA256SUMS.txt` records every package file except itself.

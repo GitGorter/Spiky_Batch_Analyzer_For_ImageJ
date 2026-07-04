@@ -16,11 +16,13 @@ This is the first public-ready packaged release of the Fiji/ImageJ Spiky Batch M
 
 ## Validation
 
-The header-only public-license update was revalidated on 2026-07-04. Full Batch processed 96/96 wells with the established 59 successes, 37 traceable conservative failures, and 526 final peaks. Required source-aware outputs, aggregate structure, normalized scientific CSV/workbook content, provenance, XML validation, and Excel 16.0 short-path opening passed. Fiji stdout/stderr reported no errors.
+The accepted scientific workflow completed the deterministic Full Batch stress test with 96/96 wells processed, 59 successes, 37 traceable conservative failures, and 526 final peaks. Required source-aware outputs, aggregate structure, normalized scientific CSV/workbook content, provenance, XML validation, and Excel 16.0 short-path opening passed.
+
+Final pre-public UI polish changed only interactive menu wording/control mapping and the source license header. The non-interactive argument path, scientific calculations, validation logic, and output formats were preserved. Static dialog/getter checks and a non-interactive packaged Dry Run passed with verified provenance and no Fiji stdout/stderr error matches.
 
 Batch macro SHA-256:
 
-`05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D`
+`E591A8780EBF9E3FBC42FF80B091281119F1A6E51205A7E680C4705416CA62E2`
 
 Spiky dependency SHA-256:
 

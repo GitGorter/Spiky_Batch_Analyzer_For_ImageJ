@@ -22,6 +22,7 @@ First public-ready packaged release.
 - Provenance verification confirms that the copied run macro matches the executed macro.
 - Workbook generation and batch runtime reporting were optimized without changing scientific calculations.
 - Public documentation, licensing, attribution, packaging, and repository hygiene were hardened.
+- The interactive main menu now uses public-facing sample-limit controls, explains polynomial fallback behavior, clarifies the Spiky macro path, and displays a concise GPL notice.
 
 ### Validation
 

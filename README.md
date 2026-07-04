@@ -108,7 +108,7 @@ This release has undergone technical, workflow, packaging, and regression valida
 - The Full Batch dummy stress test passed: 96/96 samples processed, 59 final-output successes, 37 traceable conservative failures, and 526 final peaks.
 - Excel open validation passed from a short Windows path.
 - Package inventory, file-list, and hash checks passed.
-- Scientific outputs remained unchanged after non-scientific release hardening and packaging, apart from expected timestamps, provenance, paths, and the approved license-header-only difference.
+- Scientific outputs remained unchanged after non-scientific release hardening, packaging, source-header, and interactive-menu polish, apart from expected timestamps, provenance, and paths.
 
 Here, **validated** means technical, workflow, packaging, and regression validation. It does not mean universal biological ground-truth validation for every possible calcium waveform. Users remain responsible for reviewing QC outputs, plots, and biological plausibility. Intentional dummy-well failures are not defects; crashes, silent corruption, inconsistent aggregation, missing required files, or untraceable outcomes are release blockers.
 

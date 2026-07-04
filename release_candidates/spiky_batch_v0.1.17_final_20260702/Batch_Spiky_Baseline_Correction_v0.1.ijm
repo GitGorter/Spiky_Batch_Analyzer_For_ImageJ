@@ -1,7 +1,16 @@
-// =======================================================
-// Spiky Batch Baseline Correction Macro
-// Copyright (C) 2026 Alan Ray Gorter
-// License: GPL-3.0-or-later
+// =============================================================================
+// Spiky Batch Macro for Fiji/ImageJ
+// Copyright (C) 2026 Alan Gorter
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// See the LICENSE file included with this project for the full license text.
+// =============================================================================
 // Version: v0.1.16
 // Status: Phase 15A role-based batch aggregation scaffold
 // History:
@@ -434,7 +443,9 @@ if (validationModeUsed == "Yes") {
 	Dialog.addMessage("Input table should have Time in the first column and sample traces starting from the second column.");
 	Dialog.addMessage("Run");
 	Dialog.addChoice("Run mode", newArray("Dry Run", "Full Batch", "Test First Sample Only"), "Full Batch");
-	Dialog.addNumber("Maximum samples to process in Full Batch (0 = all)", 2);
+	Dialog.addChoice("Samples to process", newArray("Full Batch (all samples)", "Set Sample Amount"), "Full Batch (all samples)");
+	Dialog.addNumber("Number of samples", 2);
+	Dialog.addMessage("Used only when 'Set Sample Amount' is selected.");
 	Dialog.addMessage("Input and output");
 	Dialog.addDirectory("Data output location", defaultOutputParent);
 	Dialog.addString("Change keyword for output folder", "NoKeyword", 30);
@@ -442,28 +453,35 @@ if (validationModeUsed == "Yes") {
 	Dialog.addCheckbox("Copy macro into output folder if possible", true);
 	Dialog.addCheckbox("Return to main menu after run", false);
 	Dialog.addMessage("Baseline");
-	Dialog.addChoice("Baseline curve method", newArray("Polynomial"), "Polynomial");
-	Dialog.addChoice("Polynomial degree", newArray("1", "2", "3", "4"), "4");
+	Dialog.addChoice("Baseline curve method", newArray("Polynomial (with automatic fallback)"), "Polynomial (with automatic fallback)");
+	Dialog.addChoice("Maximum polynomial degree", newArray("1", "2", "3", "4"), "4");
+	Dialog.addMessage("The macro tries the selected degree first. If insufficient anchors or poor fit are detected, it automatically falls back to lower degrees.");
 	Dialog.addMessage("Spiky");
 	Dialog.addChoice("Spiky peak orientation", newArray("Auto", "Negative", "Positive"), "Auto");
-	Dialog.addString("Modified Spiky.ijm path", defaultSpikyMacroPath, 60);
+	Dialog.addString("Spiky macro path", defaultSpikyMacroPath, 60);
+	Dialog.addMessage("Path to the compatible Spiky.ijm used internally for anchor and peak detection.");
 	Dialog.addMessage("Optional Spiky settings. Defaults use the current Fiji/Spiky preferences; change only for weak or poorly anchored traces.");
 	Dialog.addNumber("First Spiky min peak amplitude from baseline (%)", defaultFirstSpikyTolerancePercent);
 	Dialog.addNumber("First Spiky smoothing (-1 auto, 0 none, n points)", defaultFirstSpikySmoothing);
 	Dialog.addNumber("Second Spiky min peak amplitude from baseline (%)", defaultSecondSpikyTolerancePercent);
 	Dialog.addNumber("Second Spiky smoothing (-1 auto, 0 none, n points)", defaultSecondSpikySmoothing);
-	Dialog.addMessage("Phase 15A: Full Batch runs the validated single-sample workflow per sample and adds role-based master aggregation files without changing analysis math or per-sample outputs.");
+	Dialog.addMessage("Spiky Batch Baseline Correction\nCopyright (C) 2026 Alan Gorter\nFree software: redistribute and/or modify under GNU GPL v3.0 or later.\nSee the LICENSE file in this package for details.");
 	Dialog.show();
 
 	runMode = Dialog.getChoice();
-	fullBatchMaxSamplesToProcess = Dialog.getNumber();
+	samplesToProcessChoice = Dialog.getChoice();
+	requestedSampleAmount = Dialog.getNumber();
+	fullBatchMaxSamplesToProcess = 0;
+	if (samplesToProcessChoice == "Set Sample Amount")
+		fullBatchMaxSamplesToProcess = requestedSampleAmount;
 	outputParent = Dialog.getString();
 	changeKeywordRaw = Dialog.getString();
 	changeKeyword = normalizeChangeKeyword(changeKeywordRaw);
 	outputTableFormat = Dialog.getChoice();
 	copyMacroRequested = Dialog.getCheckbox();
 	returnToMainMenuAfterRun = Dialog.getCheckbox();
-	baselineCurveMethod = Dialog.getChoice();
+	baselineCurveMethodChoice = Dialog.getChoice();
+	baselineCurveMethod = "Polynomial";
 	polynomialDegreeChoice = Dialog.getChoice();
 	spikyPeakOrientation = Dialog.getChoice();
 	spikyMacroPath = cleanDialogPath(Dialog.getString());

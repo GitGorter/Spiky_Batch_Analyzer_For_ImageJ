@@ -5,9 +5,9 @@ Validation date: 2026-07-04
 ## Identity
 
 - Release: v0.1.17 final
-- Batch macro SHA-256: `05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D`
-- Prior scientific-release SHA-256: `2E698D4ACC3D7234089D57879CA7ECA51953781338A993768EBA0B5AFB642D0E`
-- Difference: approved copyright and GPL identifier header only.
+- Active batch macro SHA-256: `E591A8780EBF9E3FBC42FF80B091281119F1A6E51205A7E680C4705416CA62E2`
+- Full Batch regression-reference macro SHA-256: `05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D`
+- Difference: final interactive-menu wording/control mapping and expanded source license header only; scientific and non-interactive analysis paths were unchanged.
 - Spiky SHA-256: `79E1F96DA597A1AA91D462DB7B662459FF68B388BD93BF204FD8ABF401CDD81D`
 - Fiji/ImageJ: ImageJ 2.16.0 / 1.54p on Windows.
 
@@ -31,7 +31,17 @@ powershell -ExecutionPolicy Bypass -File .\scripts\run_phase17_tolerance_sweep.p
 | Fiji stdout/stderr errors | 0 |
 | Runtime | 7:32.7 |
 
-All five master CSVs matched the accepted reference after normalizing timestamps and paths. The lightweight workbook matched normalized accepted content. Failures remained traceable and later wells continued.
+This Full Batch regression was completed before the final UI-only polish. All five master CSVs matched the accepted reference after normalizing timestamps and paths. The lightweight workbook matched normalized accepted content. Failures remained traceable and later wells continued.
+
+## Final UI polish validation
+
+- Macro delimiter/static syntax checks passed.
+- Interactive dialog add/get ordering passed code review.
+- `Full Batch (all samples)` maps to `maxSamples = 0`; `Set Sample Amount` maps to the entered numeric value.
+- The non-interactive `maxSamples` argument parser remained unchanged.
+- The displayed fallback baseline choice maps to the existing internal `Polynomial` token.
+- PowerShell validation scripts parsed without errors.
+- A non-interactive Dry Run passed with the active macro hash, verified copied-macro provenance, and no Fiji stdout/stderr error matches.
 
 ## Workbook gate
 

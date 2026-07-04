@@ -11,3 +11,5 @@ Included:
 - batch overview plus representative clean (`A01`), failed (`D03`), and extreme (`H12`) plots/tables.
 
 The bulky full time-series master and most per-sample artifacts are omitted. Paths in copied text/XML files were mechanically replaced with public placeholders; scientific values and statuses were not edited. Generate the full output using the instructions in the parent README.
+
+The included provenance record reflects the accepted Full Batch regression build immediately before final UI-only menu polish. Its macro hash therefore differs from the packaged macro, but the scientific workflow and exported calculations are unchanged.
