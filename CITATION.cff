@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the v0.1.17 final software release and the Spiky publication listed in NOTICE."
+title: "Spiky Batch Macro"
+type: software
+authors:
+  - family-names: "Gorter"
+    given-names: "Alan Ray"
+version: "v0.1.17 final"
+date-released: 2026-07-02
+license: GPL-3.0-or-later
+repository-code: "https://github.com/GitGorter/Spiky_Batch_Codex_Project"
+url: "https://github.com/GitGorter/Spiky_Batch_Codex_Project"

@@ -1,0 +1,31 @@
+Methods Skeleton - Spiky Batch Baseline Correction v0.1.17
+
+Purpose
+This note summarizes the stable analysis method and selected run-level scientific settings. It is intended as a concise starting point for a publication Methods section. Exact settings and run-specific audit details are retained separately in Analysis_Settings.txt, Run_Log, sample QC outputs, and provenance/validation logs.
+
+Software
+Calcium-flux traces were analyzed in Fiji/ImageJ 2.16.0/1.54p using Spiky Batch Baseline Correction v0.1.17 and the release's modified Spiky peak-analysis dependency. Run mode: Full Batch.
+
+Input data
+Input was a delimited table with one numeric Time column followed by one numeric fluorescence trace per sample. Time values were used as supplied, in seconds, at their original sampling interval; no resampling or time-axis normalization was applied. Raw input values were not modified.
+
+Preliminary peak detection
+For scientific analysis, each raw fluorescence trace was analyzed with Spiky using peak orientation Auto, minimum peak amplitude tolerance 15%, and smoothing -1 (-1 denotes Spiky automatic smoothing). If no raw peaks were detected, the predefined conservative tolerance ladder [15, 10, 7.5, 5]% could be attempted below the selected starting tolerance; successful first attempts were not retried.
+
+Baseline-anchor selection and validation
+Candidate baseline anchors were obtained from the baseline X/Y dataset in Spiky Plot Values rather than from the peak-analysis table's Baseline column. The predicted baseline dataset was validated before fitting. Candidate anchors were checked against the raw trace using a local baseline window of 25 points and a peak-exclusion window of 5 points. The local-baseline tolerance was 5% of the raw fluorescence range and the peak-separation threshold was 10% of that range. Samples with unverified anchors or insufficient validated anchors failed visibly and were excluded from downstream correction.
+
+Polynomial baseline fitting
+A polynomial baseline was fit only to exact-length arrays of validated anchor times and values using ImageJ Fit.doFit. The requested polynomial degree was 4. Existing conservative degree handling was retained: five or more anchors allow the requested degree up to 4; four anchors allow up to degree 2; two or three anchors use degree 1; zero or one validated anchor fails. Existing QC-driven degree fallback may lower an unreasonable fit but does not add, move, or substitute anchors. Endpoint extrapolation is warning-only; no endpoint capping, flattening, boundary-anchor insertion, or correction was applied.
+
+Baseline correction
+The fitted baseline F0(t) was evaluated at each original timepoint. Corrected values were calculated row-wise as DeltaF(t) = F(t) - F0(t), DeltaF/F0(t) = [F(t) - F0(t)] / F0(t), and DeltaF/F0 percent(t) = 100 x DeltaF/F0(t). Rows with invalid or unsafe baseline denominators failed validation rather than receiving substituted values.
+
+Final peak analysis
+For samples passing baseline correction, a second Spiky analysis was performed on the DeltaF/F0 trace using peak orientation Auto, minimum peak amplitude tolerance 15%, and smoothing -1. Final peak timing, amplitude, interval, width, and area metrics were exported from this corrected-trace analysis.
+
+Quality control and failed samples
+Automated QC records anchor validation, fit residuals and reasonableness, endpoint support, peak preservation, corrected-value validity, and baseline reliability as Baseline_OK, Baseline_Warning, or Baseline_HighRisk. These reliability classes are warning metadata and do not change the scientific calculations. Recoverable sample failures are logged with their terminal phase and reason; Full Batch continues only when the batch state is safe for the next sample. QC plots support manual review but are not used as an automated acceptance rule.
+
+Outputs and traceability
+Major Full Batch aggregate files use the source-aware pattern <InputFileStem>_<OutputType>.<extension>, allowing related datasets to be opened side-by-side. Per-sample tables and plots retain sample-based names. Detailed settings, paths, warnings, failures, and validation evidence are intentionally kept outside this publication-oriented note in the dedicated audit outputs.

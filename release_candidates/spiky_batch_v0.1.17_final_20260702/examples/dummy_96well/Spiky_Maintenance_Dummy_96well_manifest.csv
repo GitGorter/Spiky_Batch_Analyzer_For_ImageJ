@@ -1,0 +1,97 @@
+Well,Category,Description,Expected_Macro_Challenge,Biologically_Plausible
+A01,Plausible clean beating,"Regular beating, 36 BPM, stable amplitude",Positive-control style trace,Yes
+A02,Plausible clean beating,"Regular beating, 42 BPM, stable amplitude",Positive-control style trace,Yes
+A03,Plausible clean beating,"Regular beating, 48 BPM, stable amplitude",Positive-control style trace,Yes
+A04,Plausible clean beating,"Regular beating, 54 BPM, stable amplitude",Positive-control style trace,Yes
+A05,Plausible clean beating,"Regular beating, 60 BPM, stable amplitude",Positive-control style trace,Yes
+A06,Plausible clean beating,"Regular beating, 66 BPM, stable amplitude",Positive-control style trace,Yes
+A07,Plausible clean beating,"Regular beating, 72 BPM, stable amplitude",Positive-control style trace,Yes
+A08,Plausible clean beating,"Regular beating, 78 BPM, stable amplitude",Positive-control style trace,Yes
+A09,Plausible clean beating,"Regular beating, 84 BPM, stable amplitude",Positive-control style trace,Yes
+A10,Plausible clean beating,"Regular beating, 90 BPM, stable amplitude",Positive-control style trace,Yes
+A11,Plausible clean beating,"Regular beating, 58 BPM, stable amplitude",Positive-control style trace,Yes
+A12,Plausible clean beating,"Regular beating, 70 BPM, stable amplitude",Positive-control style trace,Yes
+B01,Plausible biological variation,Slow strong mature-like transients,Checks tolerance across normal biological variability,Yes
+B02,Plausible biological variation,Fast low-amplitude beating,Checks tolerance across normal biological variability,Yes
+B03,Plausible biological variation,Low amplitude but clear beating,Checks tolerance across normal biological variability,Yes
+B04,Plausible biological variation,Large amplitude broad calcium decay,Checks tolerance across normal biological variability,Yes
+B05,Plausible biological variation,Narrow rapid calcium transients,Checks tolerance across normal biological variability,Yes
+B06,Plausible biological variation,Mild beat-to-beat amplitude variation,Checks tolerance across normal biological variability,Yes
+B07,Plausible biological variation,Alternans-like amplitude pattern,Checks tolerance across normal biological variability,Yes
+B08,Plausible biological variation,Mild baseline bleaching and slow beats,Checks tolerance across normal biological variability,Yes
+B09,Plausible biological variation,Moderate noise but clear beats,Checks tolerance across normal biological variability,Yes
+B10,Plausible biological variation,Faster rhythm close to peak overlap,Checks tolerance across normal biological variability,Yes
+B11,Plausible biological variation,Weak slow rhythm,Checks tolerance across normal biological variability,Yes
+B12,Plausible biological variation,High SNR regular beating,Checks tolerance across normal biological variability,Yes
+C01,Arrhythmic / uneven beating,Irregular IBI with visible beats,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C02,Arrhythmic / uneven beating,Burst-pause-burst rhythm,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C03,Arrhythmic / uneven beating,Regular rhythm with doublets,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C04,Arrhythmic / uneven beating,Early tachy burst then slow recovery,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C05,Arrhythmic / uneven beating,Bradycardic sparse but rhythmic,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C06,Arrhythmic / uneven beating,Alternating short and long IBI,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C07,Arrhythmic / uneven beating,Long silent middle gap,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C08,Arrhythmic / uneven beating,Jittery rhythm with moderate noise,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C09,Arrhythmic / uneven beating,Missed beats and irregular amplitude,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C10,Arrhythmic / uneven beating,Very fast near-overlapping transients,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C11,Arrhythmic / uneven beating,Regular rhythm with strong alternans,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+C12,Arrhythmic / uneven beating,Highly irregular rhythm with one couplet,"Peak detection, IBI, and anchor extraction under arrhythmia",Mostly
+D01,Weak / failed beating,Very weak regular beats barely above noise,Should classify weak/failing traces without crashing,Mixed
+D02,Weak / failed beating,"Almost flat, tiny residual rhythm",Should classify weak/failing traces without crashing,Mixed
+D03,Weak / failed beating,"No beating, flat baseline with noise",Should classify weak/failing traces without crashing,Mixed
+D04,Weak / failed beating,"No beating, mild photobleaching only",Should classify weak/failing traces without crashing,Mixed
+D05,Weak / failed beating,Single clear beat only,Should classify weak/failing traces without crashing,Mixed
+D06,Weak / failed beating,Two beats only,Should classify weak/failing traces without crashing,Mixed
+D07,Weak / failed beating,High noise with moderate real beats,Should classify weak/failing traces without crashing,Mixed
+D08,Weak / failed beating,"Low baseline, low amplitude, noisy",Should classify weak/failing traces without crashing,Mixed
+D09,Weak / failed beating,Beating stops after early period,Should classify weak/failing traces without crashing,Mixed
+D10,Weak / failed beating,Beating starts only late,Should classify weak/failing traces without crashing,Mixed
+D11,Weak / failed beating,Low SNR plus curved baseline,Should classify weak/failing traces without crashing,Mixed
+D12,Weak / failed beating,Sparse weak arrhythmic beats,Should classify weak/failing traces without crashing,Mixed
+E01,Baseline stress,Severe exponential photobleaching with regular beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E02,Baseline stress,Strong upward drift with regular beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E03,Baseline stress,Strong linear downward drift with regular beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E04,Baseline stress,Quadratic downward drift with regular beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E05,Baseline stress,Broad baseline hump under beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E06,Baseline stress,Broad baseline bowl under beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E07,Baseline stress,Sinusoidal baseline wander under beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E08,Baseline stress,Step up in baseline mid-recording,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E09,Baseline stress,Step down in baseline mid-recording,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E10,Baseline stress,W-shaped non-polynomial baseline,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E11,Baseline stress,Sawtooth baseline drift under beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+E12,Baseline stress,Staircase baseline drift under beats,Challenges polynomial baseline anchors and fit stability,Unlikely-to-plausible
+F01,Non-biological / artifact,Saturated/clipped high peaks,Stress-test false peak detection and baseline robustness,No
+F02,Non-biological / artifact,Single huge positive artifact spike on normal beats,Stress-test false peak detection and baseline robustness,No
+F03,Non-biological / artifact,Multiple narrow positive artifact spikes,Stress-test false peak detection and baseline robustness,No
+F04,Non-biological / artifact,Negative-going inverted calcium-like events,Stress-test false peak detection and baseline robustness,No
+F05,Non-biological / artifact,Square pulse plateaus instead of transients,Stress-test false peak detection and baseline robustness,No
+F06,Non-biological / artifact,Broad fused plateau from overlapping slow peaks,Stress-test false peak detection and baseline robustness,No
+F07,Non-biological / artifact,Very high frequency oscillation/noise on baseline,Stress-test false peak detection and baseline robustness,No
+F08,Non-biological / artifact,Large negative dip artifact plus normal beats,Stress-test false peak detection and baseline robustness,No
+F09,Non-biological / artifact,Alternating positive and negative artifacts,Stress-test false peak detection and baseline robustness,No
+F10,Non-biological / artifact,Long saturation plateau followed by recovery,Stress-test false peak detection and baseline robustness,No
+F11,Non-biological / artifact,Stair-step acquisition artifact without true beats,Stress-test false peak detection and baseline robustness,No
+F12,Non-biological / artifact,Extremely jagged noisy trace with weak beats,Stress-test false peak detection and baseline robustness,No
+G01,Anchor / edge-case stress,Beat exactly near the beginning plus regular later beats,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G02,Anchor / edge-case stress,Beat very close to the end of recording,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G03,Anchor / edge-case stress,"Only edge beats, little middle information",Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G04,Anchor / edge-case stress,Very broad slow transients leave few clean anchor valleys,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G05,Anchor / edge-case stress,Peaks on top of strong baseline hump,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G06,Anchor / edge-case stress,Peaks on top of strong baseline bowl,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G07,Anchor / edge-case stress,Regular beats with sudden local baseline dip,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G08,Anchor / edge-case stress,Mostly quiescent with late tachy burst,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G09,Anchor / edge-case stress,Early tachy burst then quiescent,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G10,Anchor / edge-case stress,Undulating baseline with small peaks,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G11,Anchor / edge-case stress,Low-amplitude beats on severe bleaching,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+G12,Anchor / edge-case stress,Irregular sparse peaks on step baseline,Targets baseline anchor timing and insufficient-anchor behavior,Mixed
+H01,Extreme numeric QC case,"Perfect flatline, no noise",Release-blocking if parser crashes; QC warning/high-risk expected,No
+H02,Extreme numeric QC case,Constant line with tiny noise only,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H03,Extreme numeric QC case,Zero-valued acquisition dropout segment,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H04,Extreme numeric QC case,Sudden baseline offset without real peaks,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H05,Extreme numeric QC case,Monotonic rise with no beating,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H06,Extreme numeric QC case,Monotonic fall with no beating,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H07,Extreme numeric QC case,"One enormous spike, otherwise flat",Release-blocking if parser crashes; QC warning/high-risk expected,No
+H08,Extreme numeric QC case,Long negative valley artifact,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H09,Extreme numeric QC case,Periodic sawtooth with no true beats,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H10,Extreme numeric QC case,Random artifact spikes without biological rhythm,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H11,Extreme numeric QC case,Highly clipped signal with ceiling and floor effects,Release-blocking if parser crashes; QC warning/high-risk expected,No
+H12,Extreme numeric QC case,"Combination: severe bleaching, weak beats, giant artifact",Release-blocking if parser crashes; QC warning/high-risk expected,No

@@ -1,0 +1,13 @@
+Spiky Batch Macro
+Copyright (C) 2026 Alan Ray Gorter
+
+This distribution includes Spiky.ijm, a third-party ImageJ macro by Come Pasqualin and Francois Gannier. Spiky is not owned by Alan Ray Gorter. Its file header states that it is distributed under the GNU General Public License, version 3 or (at the user's option) any later version.
+
+Spiky publication:
+
+Pasqualin C, Gannier F, Yu A, Benoist D, Findlay I, Bordy R, Bredeloux P, Maupoil V. "Spiky: An ImageJ Plugin for Data Analysis of Functional Cardiac and Cardiomyocyte Studies." Journal of Imaging. 2022;8(4):95.
+DOI: 10.3390/jimaging8040095
+PMID: 35448222
+PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC9026474/
+
+Fiji and ImageJ are separate open-source projects. Their inclusion in documentation does not imply endorsement of this software.

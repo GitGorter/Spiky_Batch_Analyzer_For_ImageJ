@@ -1,0 +1,2 @@
+"Sample_Name","Analysis_Type","Index","Pos","Tmax (s)","APeak","Baseline Bl","Amplitude","Pk2Pk (s)","Time2Pk (s)","FWHM (s)","FW20 (s)","FW80 (s)","LW50 (s)","LW20 (s)","LW80 (s)","RW50 (s)","RW20 (s)","RW80 (s)"
+"H12","DeltaF_over_F0_SecondSpiky",1,624,6.250000,1.750517,-0.000089,1.750606,"NA",0.060000,0.062656,0.096051,0.033577,0.025547,0.039683,0.011036,0.037109,0.056368,0.022541

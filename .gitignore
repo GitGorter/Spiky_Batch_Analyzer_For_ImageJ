@@ -1,0 +1,78 @@
+# Local Fiji/ImageJ installations and mutable runtime state
+Fiji/
+Fiji.app/
+ImageJ/
+ImageJ.app/
+**/Fiji.app/
+**/ImageJ.app/
+**/fiji-windows-*.exe
+**/ImageJ-win*.exe
+**/db.xml.gz
+**/.checksums
+**/jars/
+**/java/
+**/lib/
+**/luts/
+**/plugins/
+**/update/
+**/updates/
+**/cache/
+**/.imagej/
+**/.fiji/
+
+# Local machine configuration
+config/local_fiji_config.ps1
+*.local.ps1
+*.local.json
+*.local.yaml
+*.local.yml
+.env
+.env.*
+
+# Local validation input data and legacy reference artifacts
+/B8D28 Data/
+/*.csv
+/Validated Snapshot/
+/Spiky_reference_original.ijm
+/*ProtectedBackup.ijm
+
+# Generated validation and batch outputs
+validation/**/outputs/**
+!validation/**/outputs/.gitkeep
+**/Spiky_Batch_Output_*/
+**/Spiky_Batch_v*/
+!release_candidates/spiky_batch_v0.1.17_final_20260702/
+!release_candidates/spiky_batch_v0.1.17_final_20260702/**
+**/archive_test_runs/
+**/Batch_Master_Results*
+**/Final_Peak_Master*
+**/Corrected_Traces_All_Samples*
+**/Peak_Analysis_After_Baseline_Correction*
+**/Macro_Used_For_This_Run.ijm
+**/Analysis_Settings.txt
+**/Run_Log.csv
+**/Run_Log.txt
+**/*tolerance_sweep*.log
+**/*phase17*.log
+
+# Large or machine-specific backups
+PROJECT_BACKUPS/
+**/PROJECT_BACKUPS/
+
+# Temporary files and editor/OS metadata
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.log
+*.swp
+*.swo
+__pycache__/
+*.py[cod]
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+.vscode/

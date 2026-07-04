@@ -1,0 +1,6 @@
+Macro_Provenance_Status: Verified
+Executed_Batch_Macro_Path: C:/Spiky_Project\Batch_Spiky_Baseline_Correction_v0.1.ijm
+Executed_Batch_Macro_SHA256: 05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D
+Copied_Macro_Path: C:/Spiky_Output/Public_Dummy_Example\Macro_Used_For_This_Run.ijm
+Copied_Macro_SHA256: 05A8363EBFC5F2988E2CD6E287179C09792B3F38577589C83422A81A803CFF6D
+Detail: Copied macro SHA256 matched the exact macro path launched by the runner.
