@@ -12,16 +12,20 @@ This is research software. Review the generated QC records and plots before inte
 
 Optional Spiky modules are not required by this batch workflow.
 
-## Download and verify
+## Download
 
-Download the latest release ZIP and its `.sha256` sidecar from the GitHub Releases page. In PowerShell, verify the archive with:
+Normal users can download, extract, and use the latest release ZIP directly from the GitHub Releases page.
+
+### Optional: verify the release download
+
+Checksum verification is recommended when you want to confirm file integrity, reproducibility, or institutional auditability. Download the ZIP and its `.sha256` sidecar, then run:
 
 ```powershell
 Get-FileHash -Algorithm SHA256 .\spiky_batch_v0.1.17_final_20260702.zip
 Get-Content .\spiky_batch_v0.1.17_final_20260702.zip.sha256
 ```
 
-The two hashes must match before extraction.
+The calculated ZIP hash should match the value in the sidecar. This check is optional and is not required for normal installation.
 
 ## Install
 
@@ -49,6 +53,25 @@ In Fiji, choose:
 
 Select the open input table. Use **Full Batch** for the complete analysis and keep the validated default settings unless you understand and document the effect of changing them. **Dry Run** checks table detection and output setup without performing peak or baseline analysis.
 
+## Workflow
+
+```mermaid
+flowchart TD
+    A["Input CSV or TSV"] --> B["Extract sample traces"]
+    B --> C["First Spiky peak detection"]
+    C --> D["Extract baseline anchors"]
+    D --> E{"Anchor validation and QC"}
+    E -->|Usable anchors| F["Polynomial baseline fitting"]
+    F --> G["Baseline correction"]
+    G --> H["Calculate ΔF, ΔF/F0, and ΔF/F0%"]
+    H --> I["Second Spiky analysis on corrected traces"]
+    I --> J{"Sample result"}
+    J -->|Completed| K["Organized Data, Plots, and Tables outputs"]
+    E -->|Insufficient or unsafe| L["Traceable warning or failure in QC and logs"]
+    J -->|Warning or failure| L
+    L --> K
+```
+
 ## Outputs
 
 Each run creates a timestamped output folder:
@@ -70,21 +93,30 @@ See [Output guide](docs/OUTPUT_GUIDE.md) for details.
 
 Some samples can fail traceably while a Full Batch run completes. Review `Run_Log.csv`, the sample summary, baseline reconstruction plots, and final peak plots. The software does not decide biological validity or replace scientific judgment.
 
-See [QC interpretation](docs/QC_INTERPRETATION_GUIDE.md) and [Disclaimer](DISCLAIMER.md).
+See [QC interpretation](docs/QC_INTERPRETATION_GUIDE.md) and [Disclaimer](docs/DISCLAIMER.md).
 
 ## Known limitation
 
 Very deep Windows paths can prevent older Excel configurations from opening an otherwise valid XML workbook. Use a short output parent such as `C:\Spiky_Output\`, or copy the XML file to a short local path before opening it.
 
-## Validation
+## Validation summary
 
-The public release was validated on the deterministic 96-well stress test: 96/96 samples processed, 59 completed with final output, 37 traceable conservative failures, and 526 final peaks. Intentional dummy-well failures are not defects; crashes, silent corruption, inconsistent aggregation, missing required files, or untraceable outcomes are release blockers.
+This release has undergone technical, workflow, packaging, and regression validation with ImageJ 2.16.0 / 1.54p on Windows. Cross-platform use is expected but has not been fully validated.
+
+- A deterministic 96-well dummy stress-test dataset was used.
+- The packaged Dry Run smoke test passed.
+- The Full Batch dummy stress test passed: 96/96 samples processed, 59 final-output successes, 37 traceable conservative failures, and 526 final peaks.
+- Excel open validation passed from a short Windows path.
+- Package inventory, file-list, and hash checks passed.
+- Scientific outputs remained unchanged after non-scientific release hardening and packaging, apart from expected timestamps, provenance, paths, and the approved license-header-only difference.
+
+Here, **validated** means technical, workflow, packaging, and regression validation. It does not mean universal biological ground-truth validation for every possible calcium waveform. Users remain responsible for reviewing QC outputs, plots, and biological plausibility. Intentional dummy-well failures are not defects; crashes, silent corruption, inconsistent aggregation, missing required files, or untraceable outcomes are release blockers.
 
 See [Public release validation](docs/validation/PUBLIC_RELEASE_VALIDATION.md).
 
 ## Citation and attribution
 
-Please cite this software release using [CITATION.cff](CITATION.cff) or [CITATION.bib](CITATION.bib).
+Please cite this software release using [CITATION.cff](docs/CITATION.cff) or [CITATION.bib](docs/CITATION.bib).
 
 Spiky is third-party GPL software. Please also cite:
 
