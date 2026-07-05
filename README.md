@@ -1,5 +1,7 @@
 # Spiky Batch Macro
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21194552.svg)](https://doi.org/10.5281/zenodo.21194552)
+
 Spiky Batch Macro is a Fiji/ImageJ workflow for batch analysis of calcium-flux traces. It uses Spiky peak detection and adds validated polynomial baseline correction, conservative QC and failure handling, source-aware aggregate filenames, and an organized `Data/`, `Plots/`, and `Tables/` output structure.
 
 This is research software. Review the generated QC records and plots before interpreting results.
@@ -114,9 +116,14 @@ Here, **validated** means technical, workflow, packaging, and regression validat
 
 See [Public release validation](docs/validation/PUBLIC_RELEASE_VALIDATION.md).
 
-## Citation and attribution
+## How to cite
 
-Please cite this software release using [CITATION.cff](CITATION.cff) or [CITATION.bib](CITATION.bib).
+Please cite this software using [CITATION.cff](CITATION.cff) or [CITATION.bib](CITATION.bib). The Concept DOI always resolves to the newest archived release. Publications should cite the Version DOI corresponding to the software version actually used.
+
+- Concept DOI: [10.5281/zenodo.21194552](https://doi.org/10.5281/zenodo.21194552)
+- Version DOI (v0.1.17): [10.5281/zenodo.21194553](https://doi.org/10.5281/zenodo.21194553)
+
+Use the Version DOI above when citing results produced with v0.1.17.
 
 Spiky is third-party GPL software. Please also cite:
 

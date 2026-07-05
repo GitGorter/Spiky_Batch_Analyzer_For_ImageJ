@@ -4,6 +4,10 @@ Release date: 2026-07-02
 
 This is the first public-ready packaged release of the Fiji/ImageJ Spiky Batch Macro.
 
+## Citation metadata update
+
+Zenodo citation metadata was finalized after release archiving. This is a documentation/citation update only; software behavior and release assets are unchanged. The v0.1.17 Version DOI is `10.5281/zenodo.21194553`, and the Concept DOI for the newest release is `10.5281/zenodo.21194552`.
+
 ## Highlights
 
 - Full Batch calcium-flux trace analysis using the packaged Spiky dependency.

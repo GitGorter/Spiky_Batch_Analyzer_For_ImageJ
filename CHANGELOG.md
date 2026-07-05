@@ -29,3 +29,9 @@ First public-ready packaged release.
 - 96/96 deterministic dummy wells processed.
 - 59 final-output successes, 37 traceable conservative failures, and 526 final peaks.
 - Source-aware outputs, aggregation, required files, XML structure, and short-path Excel opening passed.
+
+### Documentation
+
+- Added Zenodo DOI.
+- Finalized citation metadata.
+- No changes to software behavior.
